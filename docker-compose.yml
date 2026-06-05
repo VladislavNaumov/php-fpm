@@ -1,5 +1,5 @@
 services:
-  # PHP + Laravel
+  # PHP + FPM
   app:
     build:
       context: .
@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
 
-  # Веб-сервер Nginx
+  # Web-server Nginx
   webserver:
     image: nginx:alpine
     ports:
@@ -38,7 +38,7 @@ services:
   #  volumes:
   #    - redis_data:/data
 
-  #helper:
+  # Helper container:
   #  image: alpine:latest
   #  container_name: helper
   #  working_dir: /script
